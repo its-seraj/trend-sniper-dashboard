@@ -1,5 +1,7 @@
 export function formatDate(iso: string): string {
   if (!iso) return '-'
+  const d = new Date(iso)
+  // Display in IST (UTC+5:30) regardless of browser timezone
   return new Intl.DateTimeFormat('en-IN', {
     year: 'numeric',
     month: 'short',
@@ -7,7 +9,8 @@ export function formatDate(iso: string): string {
     hour: '2-digit',
     minute: '2-digit',
     hour12: false,
-  }).format(new Date(iso))
+    timeZone: 'UTC',
+  }).format(d)
 }
 
 export function truncateText(text: string, maxLen = 120): string {

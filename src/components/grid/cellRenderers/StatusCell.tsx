@@ -8,7 +8,7 @@ const styleMap: Record<string, { color: string; background: string; border: stri
 
 export function StatusCell(props: CustomCellRendererProps) {
   const value = (props.value as string) ?? ''
-  const s = styleMap[value.toLowerCase()] ?? { color: '#30363d', background: 'transparent', border: '1px solid #30363d44' }
+  const s = styleMap[value.toLowerCase()] ?? { color: '#6b7280', background: 'transparent', border: '1px solid #6b728044' }
   return (
     <span style={{
       display: 'inline-flex',

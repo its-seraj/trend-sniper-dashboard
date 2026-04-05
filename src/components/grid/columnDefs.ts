@@ -3,6 +3,9 @@ import { SentimentCell } from './cellRenderers/SentimentCell'
 import { StatusCell } from './cellRenderers/StatusCell'
 import { BodyCell } from './cellRenderers/BodyCell'
 import { SourceCell } from './cellRenderers/SourceCell'
+import { SectorCell } from './cellRenderers/SectorCell'
+import { LabelCell } from './cellRenderers/LabelCell'
+import { TopicCell } from './cellRenderers/TopicCell'
 import { formatDate } from '../../utils/formatters'
 
 const mono: CellStyle = {
@@ -14,18 +17,10 @@ const mono: CellStyle = {
 const dimMono: CellStyle = {
   fontFamily: "'JetBrains Mono', monospace",
   fontSize: '11px',
-  color: '#30363d',
+  color: '#6b7280ce',
 }
 
 export const columnDefs: ColDef[] = [
-  {
-    headerName: 'ID',
-    field: 'id',
-    width: 72,
-    sortable: false,
-    pinned: 'left',
-    cellStyle: dimMono,
-  },
   {
     headerName: 'Source',
     field: 'source_name',
@@ -43,7 +38,7 @@ export const columnDefs: ColDef[] = [
       fontFamily: "'Inter', system-ui, sans-serif",
       fontSize: '13px',
       fontWeight: '400',
-      color: '#e6edf3',
+      color: '#e2e8f0cc',
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap',
@@ -58,6 +53,27 @@ export const columnDefs: ColDef[] = [
     cellRenderer: BodyCell,
   },
   {
+    headerName: 'Sector',
+    field: 'sector_candidates',
+    width: 150,
+    sortable: false,
+    cellRenderer: SectorCell,
+  },
+  {
+    headerName: 'Label',
+    field: 'label_candidates',
+    width: 150,
+    sortable: false,
+    cellRenderer: LabelCell,
+  },
+  {
+    headerName: 'Topic',
+    field: 'topic_candidates',
+    width: 150,
+    sortable: false,
+    cellRenderer: TopicCell,
+  },
+  {
     headerName: 'Sentiment',
     field: 'sentiment_label',
     width: 115,
@@ -66,11 +82,11 @@ export const columnDefs: ColDef[] = [
   },
   {
     headerName: 'Score',
-    field: 'sentiment_score',
+    field: 'sentiment_comp',
     width: 88,
     sortable: false,
     cellStyle: mono,
-    valueFormatter: (p) => (p.value != null ? parseFloat(p.value).toFixed(3) : '—'),
+    valueFormatter: (p) => (p.value != null ? parseFloat(p.value).toFixed(4) : '—'),
   },
   {
     headerName: 'Credibility',
