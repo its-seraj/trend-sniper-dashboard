@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+@import "tailwindcss";
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── AG Grid theme overrides ── */
+.ag-root-wrapper {
+  border: none !important;
+}
+
+.ag-header {
+  border-bottom: 1px solid #30363d !important;
+}
+
+.ag-header-cell-text {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #00d4ff !important;
+}
+
+.ag-header-cell {
+  border-right: 1px solid #30363d !important;
+}
+
+.ag-row {
+  border-bottom: 1px solid #161b22 !important;
+  transition: background 0.15s ease !important;
+}
+
+.ag-row:hover {
+  background: #161b22 !important;
+}
+
+.ag-cell {
+  display: flex !important;
+  align-items: center !important;
+  border-right: 1px solid rgba(48, 54, 61, 0.4) !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 13px !important;
+}
+
+.ag-cell-value {
+  width: 100%;
+}
+
+.ag-loading-cell-renderer {
+  color: #30363d !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 12px !important;
+}
+
+/* Scrollbar */
+.ag-body-vertical-scroll-viewport::-webkit-scrollbar,
+.ag-body-horizontal-scroll-viewport::-webkit-scrollbar { width: 6px; height: 6px; }
+.ag-body-vertical-scroll-viewport::-webkit-scrollbar-track,
+.ag-body-horizontal-scroll-viewport::-webkit-scrollbar-track { background: #0d1117; }
+.ag-body-vertical-scroll-viewport::-webkit-scrollbar-thumb,
+.ag-body-horizontal-scroll-viewport::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
+.ag-body-vertical-scroll-viewport::-webkit-scrollbar-thumb:hover,
+.ag-body-horizontal-scroll-viewport::-webkit-scrollbar-thumb:hover { background: #00d4ff44; }
