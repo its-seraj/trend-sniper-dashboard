@@ -8,7 +8,7 @@ const client = axios.create({
 })
 
 export async function fetchRefinements(page: number, limit: number): Promise<RefinementsApiResponse> {
-  const response = await client.get<RefinementsApiResponse>('/refinements', {
+  const response = await client.get<RefinementsApiResponse>('/ml/refinements', {
     params: { page, limit },
   })
   return response.data
