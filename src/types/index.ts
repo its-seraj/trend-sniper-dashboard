@@ -12,9 +12,9 @@ export interface MlLabel {
 export interface MlRefinementRecord {
   id: string
   processed_item_id: string
-  model_name: string
-  model_version: string
-  endpoint_url: string
+  source_name: string
+  title: string
+  body: string
   ml_sector: string
   ml_sector_probs: Record<string, number>
   ml_labels: MlLabel[]

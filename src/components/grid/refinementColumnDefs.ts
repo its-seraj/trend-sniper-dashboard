@@ -1,4 +1,6 @@
 import type { ColDef, CellStyle } from 'ag-grid-community'
+import { SourceCell } from './cellRenderers/SourceCell'
+import { BodyCell } from './cellRenderers/BodyCell'
 import { MlSectorCell } from './cellRenderers/MlSectorCell'
 import { MlLabelsCell } from './cellRenderers/MlLabelsCell'
 import { MlEntitiesCell } from './cellRenderers/MlEntitiesCell'
@@ -21,30 +23,35 @@ const dimMono: CellStyle = {
 
 export const refinementColumnDefs: ColDef[] = [
   {
-    headerName: 'ID',
-    field: 'processed_item_id',
-    width: 72,
+    headerName: 'Source',
+    field: 'source_name',
+    width: 175,
     sortable: false,
-    cellStyle: dimMono,
-    valueFormatter: (p) => (p.value != null ? `#${p.value}` : '—'),
+    cellRenderer: SourceCell,
   },
   {
-    headerName: 'Model',
-    field: 'model_name',
-    width: 160,
+    headerName: 'Title',
+    field: 'title',
+    flex: 2,
+    minWidth: 220,
     sortable: false,
     cellStyle: {
-      fontFamily: "'JetBrains Mono', monospace",
-      fontSize: '11px',
-      color: '#00d4ffaa',
+      fontFamily: "'Inter', system-ui, sans-serif",
+      fontSize: '13px',
+      fontWeight: '400',
+      color: '#e2e8f0cc',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
     } as CellStyle,
   },
   {
-    headerName: 'Ver',
-    field: 'model_version',
-    width: 54,
+    headerName: 'Body',
+    field: 'body',
+    flex: 3,
+    minWidth: 260,
     sortable: false,
-    cellStyle: dimMono,
+    cellRenderer: BodyCell,
   },
   {
     headerName: 'Sector',
@@ -106,9 +113,9 @@ export const refinementColumnDefs: ColDef[] = [
     cellRenderer: MlEntitiesCell,
   },
   {
-    headerName: 'Source',
+    headerName: 'Res. Source',
     field: 'resolution_source',
-    width: 95,
+    width: 105,
     sortable: false,
     cellRenderer: ResolutionSourceCell,
   },
