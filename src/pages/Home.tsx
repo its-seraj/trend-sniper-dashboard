@@ -98,37 +98,70 @@ export function Home({ onNavigate }: HomeProps) {
             ))}
           </div>
 
-          {/* CTA */}
-          <button
-            onClick={() => onNavigate('feed')}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '10px',
-              padding: '12px 28px',
-              background: 'transparent',
-              border: '1px solid #00d4ff44',
-              borderRadius: '6px',
-              color: '#00d4ff',
-              fontFamily: mono,
-              fontSize: '13px',
-              fontWeight: 500,
-              letterSpacing: '0.04em',
-              cursor: 'pointer',
-              transition: 'all 0.2s',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.background = '#00d4ff11'
-              e.currentTarget.style.borderColor = '#00d4ff'
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.background = 'transparent'
-              e.currentTarget.style.borderColor = '#00d4ff44'
-            }}
-          >
-            <span>Open Raw Feed</span>
-            <span style={{ fontSize: '16px', lineHeight: 1 }}>→</span>
-          </button>
+          {/* CTAs */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>
+            <button
+              onClick={() => onNavigate('feed')}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                padding: '12px 28px',
+                background: 'transparent',
+                border: '1px solid #00d4ff44',
+                borderRadius: '6px',
+                color: '#00d4ff',
+                fontFamily: mono,
+                fontSize: '13px',
+                fontWeight: 500,
+                letterSpacing: '0.04em',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = '#00d4ff11'
+                e.currentTarget.style.borderColor = '#00d4ff'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = 'transparent'
+                e.currentTarget.style.borderColor = '#00d4ff44'
+              }}
+            >
+              <span>Open Raw Feed</span>
+              <span style={{ fontSize: '16px', lineHeight: 1 }}>→</span>
+            </button>
+
+            <button
+              onClick={() => onNavigate('refinements')}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                padding: '12px 28px',
+                background: 'transparent',
+                border: '1px solid #a78bfa44',
+                borderRadius: '6px',
+                color: '#a78bfa',
+                fontFamily: mono,
+                fontSize: '13px',
+                fontWeight: 500,
+                letterSpacing: '0.04em',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = '#a78bfa11'
+                e.currentTarget.style.borderColor = '#a78bfa'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = 'transparent'
+                e.currentTarget.style.borderColor = '#a78bfa44'
+              }}
+            >
+              <span>ML Refinements</span>
+              <span style={{ fontSize: '16px', lineHeight: 1 }}>→</span>
+            </button>
+          </div>
         </div>
       </main>
 

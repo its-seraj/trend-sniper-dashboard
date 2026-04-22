@@ -9,6 +9,10 @@ export default defineConfig({
         target: 'https://api.seraj.live',
         changeOrigin: true,
       },
+      '/refinements': {
+        target: 'https://api.seraj.live',
+        changeOrigin: true,
+      },
     },
   },
 })
