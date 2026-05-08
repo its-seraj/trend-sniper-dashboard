@@ -161,6 +161,37 @@ export function Home({ onNavigate }: HomeProps) {
               <span>ML Refinements</span>
               <span style={{ fontSize: '16px', lineHeight: 1 }}>→</span>
             </button>
+
+            <button
+              onClick={() => onNavigate('dividends')}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                padding: '12px 28px',
+                background: 'transparent',
+                border: '1px solid #facc1544',
+                borderRadius: '6px',
+                color: '#facc15',
+                fontFamily: mono,
+                fontSize: '13px',
+                fontWeight: 500,
+                letterSpacing: '0.04em',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = '#facc1511'
+                e.currentTarget.style.borderColor = '#facc15'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = 'transparent'
+                e.currentTarget.style.borderColor = '#facc1544'
+              }}
+            >
+              <span>Dividends</span>
+              <span style={{ fontSize: '16px', lineHeight: 1 }}>→</span>
+            </button>
           </div>
         </div>
       </main>

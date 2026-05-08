@@ -3,9 +3,10 @@ import type { CustomCellRendererProps } from 'ag-grid-react'
 import { getSource } from '../../../data/sources'
 
 export function SourceCell(props: CustomCellRendererProps) {
-  const sourceId = props.data?.source_id as string
-  const sourceName = props.value as string
-  const source = getSource(sourceId)
+  const sourceId = props.data?.source_id as string | null | undefined
+  const sourceName = props.value as string | null | undefined
+  const lookupKey = (sourceId || sourceName || '').toLowerCase()
+  const source = getSource(lookupKey)
   const [imgFailed, setImgFailed] = useState(false)
 
   return (

@@ -4,6 +4,7 @@ interface WindowEnv {
   STREAM_URL: string
   APP_NAME: string
   APP_HOST: string
+  DIVIDENDS_API_BASE_URL?: string
 }
 
 interface Window {

@@ -4,4 +4,5 @@ window._env_ = {
   STREAM_URL: 'https://api.seraj.live/ml/stream',
   APP_NAME: 'Trend Sniper',
   APP_HOST: 'trend.seraj.live',
+  DIVIDENDS_API_BASE_URL: 'https://api.seraj.live/dividend',
 }
